@@ -1,0 +1,31 @@
+<h1> 
+    Olá, estamos no
+    <br>
+    <%= estado[0].nome %>
+    <br>
+    <%= estado[0].sigla %>
+</h1>
+<ul>
+    <% for(var i=0; i<estado.length; i++) { %>
+        <li>
+            Nome: <%= estado[i].nome %><br>
+        </li>
+        <li>
+            Sigla: <%= estado[i].sigla %><br>
+            Bairro: <%= estado[i].bairro %><br><hr>
+        </li>
+    <% } %>
+</ul> 
+<ul>
+    <% estado.forEach((est) => { %>
+        <li>
+            <h3>
+                <%= est.nome %>/<%= est.sigla %>
+            </h3>
+            <p>
+                <%= est.bairro %>
+            </p>
+            <hr />
+        </li>
+    <% }); %>
+</ul>
