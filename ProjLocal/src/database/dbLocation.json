@@ -1,0 +1,17 @@
+[
+    {
+        "nome": "São Paulo",
+        "sigla": "SP",
+        "bairro": "Lapa"
+    },
+    {
+        "nome": "Rio Grande do Sul",
+        "sigla": "RS",
+        "bairro": "Pelotas"
+    },
+    {
+        "nome": "Santa Catarina",
+        "sigla": "SC",
+        "bairro": "Monte Castelo"
+    }
+]
