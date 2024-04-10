@@ -1,0 +1,17 @@
+<%- include('partials/header') %>
+    <main class="0-main">
+        <% location.forEach((loc)=>{
+            %>
+            <li>
+                <h3>
+                    <%= loc.nome %>/<%= loc.sigla %>
+                </h3>
+                <p>
+                    <%= loc.bairro %>
+                </p>
+            </li>
+            <hr />
+            <% }) %>
+    </main>
+    <%- include('partials/footer') %>
+        tem menu de contexto
