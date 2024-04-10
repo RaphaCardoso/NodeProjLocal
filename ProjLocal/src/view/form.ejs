@@ -1,0 +1,25 @@
+<%- include('partials/header') %>
+    <div class="form-box">
+        <form class="form" method="post">
+            <span class="title">Cadastro De Local</span>
+            <span class="subtitle">Crie uma nova identificação de endereço para que você consiga ter mais comodidade em
+                seus serviços</span>
+            <div class="form-container">
+                <select id="txtEstado" placeholder="Estado" name="Estado" required>
+                    <option value="SP">SP</option>
+                    <option value="RJ">RJ</option>
+                    <option value="MG">MG</option>
+                    <option value="ES">ES</option>
+                </select>
+
+                <select id="txtCidade" name="cidade" required>
+                    <option value="são_paulo">São Paulo</option>
+                    <option value="cotia">Cotia</option>
+                    <option value="vargem_grande">Vargem Grande</option>
+                </select>
+                <input type="text" class="input" placeholder="Município" required>
+            </div>
+            <button>Cadastre</button>
+        </form>
+    </div>
+    <%- include('partials/footer') %>
