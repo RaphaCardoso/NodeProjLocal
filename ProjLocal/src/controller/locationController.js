@@ -31,3 +31,26 @@ exports.getForm = async (req, res) => {
         res.status(500).json({ error: err.toString() })
     }
 };
+
+exports.newContact = async (req, res) => {
+
+
+
+    const data = req.body
+
+    const locations = await this.getAllLocation();
+    location.id = locations.length + 1;
+    locations.push(data);
+
+    locationModel.writeLocationToFile(data);
+
+    res.render("form");
+
+
+};
+
+
+
+
+
+
