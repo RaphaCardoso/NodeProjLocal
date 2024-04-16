@@ -1,17 +1,7 @@
 [
     {
-        "nome": "São Paulo",
         "sigla": "SP",
-        "bairro": "Lapa"
-    },
-    {
-        "nome": "Rio Grande do Sul",
-        "sigla": "RS",
-        "bairro": "Pelotas"
-    },
-    {
-        "nome": "Santa Catarina",
-        "sigla": "SC",
-        "bairro": "Monte Castelo"
+        "nome": "são_paulo",
+        "bairro": "111"
     }
 ]
