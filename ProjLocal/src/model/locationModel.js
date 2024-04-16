@@ -37,6 +37,7 @@ class LocationModel {
         return locations;
     }
 
+
 }
 
 module.exports = LocationModel;
