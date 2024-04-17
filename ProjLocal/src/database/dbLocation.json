@@ -1,7 +1,1 @@
-[
-    {
-        "sigla": "SP",
-        "nome": "são_paulo",
-        "bairro": "111"
-    }
-]
+[null,{"sigla":"MG","nome":"cotia","bairro":"test","id":1}]
