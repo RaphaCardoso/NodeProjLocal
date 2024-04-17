@@ -33,19 +33,20 @@ exports.getForm = async (req, res) => {
 };
 
 exports.newContact = async (req, res) => {
+    try {
+        const data = req.body
+        const location = await locationModel.createLocation(data);
+        res.render("form");
+    } catch (err) {
+        res.status(500).json({ error: err.toString() })
+    }
 
-
-
-    const data = req.body
-
-    const locations = await this.getAllLocation();
-    location.id = locations.length + 1;
-    locations.push(data);
-
-    locationModel.writeLocationToFile(data);
-
-    res.render("form");
-
+    /*
+    
+        locationModel.writeLocationToFile(data);
+    
+        res.render("form");
+    */
 
 };
 
