@@ -49,7 +49,7 @@ class LocationModel {
         } else {
             location.id = locations.length;
             locations.push(location);
-            //LocationModel.writeLocationToFile(locations);
+            LocationModel.writeLocationToFile(locations);
         }
 
     }
