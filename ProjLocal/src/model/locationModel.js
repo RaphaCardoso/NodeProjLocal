@@ -9,7 +9,7 @@ class LocationModel {
         return new Promise((resolve, reject) => {
             fs.readFile(filePath, 'utf8', (err, data) => {
                 if (err) {
-                    if (err.code === 'ENOENT') {
+                    if (err.code === 'ENDENT') {
                         this.writeLocationToFile([]).then(resolve).catch(reject);
                     } else {
                         reject(err);
@@ -37,7 +37,24 @@ class LocationModel {
         return locations;
     }
 
+    static async createLocation(location) {
+        const locations = await [LocationModel.getLocation];
+
+        console.log(location)
+
+        const verifica = locations.some(localizacao => localizacao === location);
+
+        if (verifica) {
+            console.log("location já existente")
+        } else {
+            location.id = locations.length;
+            locations.push(location);
+            //LocationModel.writeLocationToFile(locations);
+        }
+
+    }
 
 }
+
 
 module.exports = LocationModel;
