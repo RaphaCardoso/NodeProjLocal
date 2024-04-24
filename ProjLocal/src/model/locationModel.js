@@ -38,23 +38,56 @@ class LocationModel {
     }
 
     static async createLocation(location) {
-        const locations = await [LocationModel.getLocation];
+        fs.readFile(filePath, 'utf-8', (err, data) => {
+            if (err) {
+                console.error('Erro ao ler o arquivo:', err);
+                return;
+            }
+            let database = []
+            database = JSON.parse(data)
 
-        console.log(location)
+            database.push(location)
 
-        const verifica = locations.some(localizacao => localizacao === location);
+            this.writeLocationToFile(database)
+            this.getLocation
+        })
 
-        if (verifica) {
-            console.log("location já existente")
-        } else {
-            location.id = locations.length;
-            locations.push(location);
-            LocationModel.writeLocationToFile(locations);
+    }
+
+    static async verifica(location) {
+        // função assincrona que pega o data.reqbody e guarda na variavel location
+
+        // cria um array 
+        let database = [];
+        try {
+            // le o arquivo na qual está salvo todas as location
+            const data = fs.readFileSync(filePath, 'utf-8');
+            // atribui ao array os dados lidos do arquivo json transformando os em objeto (parse)
+            database = JSON.parse(data);
+        } catch (err) {
+            console.error('Erro ao ler o arquivo:');
+            return;
         }
+
+        // Verifica se algum objeto no arquivo é igual ao objeto 'location'
+        const igual = database.some(item => {
+
+            // transforma o objeto achado em json e verifica se ele é igual ao location
+            return JSON.stringify(item) === JSON.stringify(location);
+        });
+
+        if (igual) {
+            console.log('Objeto já existe no arquivo.');
+            return 1;
+        } else {
+            console.log('Objeto não encontrado no arquivo.');
+            return 0;
+        }
+
+
 
     }
 
 }
-
 
 module.exports = LocationModel;
